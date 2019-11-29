@@ -1,7 +1,8 @@
 # ansible-k8s
-Installing a k8s cluster by ansible playbook
+Install a k8s cluster by ansible playbook<br>
+(tested with Centos7 for ansible host, k8s master and worker nodes)
 
-1. Install ansible into ansible host (tested with Centos7)
+1. Install ansible into ansible host
 ```
 sudo yum install ansible
 ```
@@ -25,14 +26,19 @@ In the env_variables file, ad_addr is the ip address of the master node which re
 # ad_addr is master server, which other nodes/clients to connect to
 ad_addr: 172.31.1.153
 cidr_v: 172.16.0.0/16
-
-packages:
-- kubeadm
-- kubectl
-
-services:
-- docker
-- kubelet
-
-token_file: join_token
+....
 ```
+3. Run the playbooks
+Download, install packages
+```
+ansible-playbook --private-key your_private_key.pem setting_up_nodes.yml
+```
+Configure the master node
+```
+ansible-playbook --private-key your_private_key.pem configure_master_node.yml
+```
+Configure the worker nodes
+```
+ansible-playbook --private-key your_private_key.pem configure_master_node.yml
+```
+Enjoy!
