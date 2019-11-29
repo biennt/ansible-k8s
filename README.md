@@ -40,6 +40,6 @@ ansible-playbook --private-key your_private_key.pem configure_master_node.yml
 ```
 Configure the worker nodes
 ```
-ansible-playbook --private-key your_private_key.pem configure_master_node.yml
+ansible-playbook --private-key your_private_key.pem configure_worker_nodes.yml
 ```
 Enjoy!
