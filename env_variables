@@ -1,5 +1,5 @@
 # ad_addr is master server, which other nodes/clients to connect to
-ad_addr: 172.31.0.20
+ad_addr: 172.31.1.153
 cidr_v: 172.16.0.0/16
 
 packages:
