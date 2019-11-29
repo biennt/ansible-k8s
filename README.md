@@ -1,5 +1,5 @@
 # ansible-k8s
-Install a k8s cluster by ansible playbook<br>
+Install a k8s cluster by ansible playbooks<br>
 (tested with Centos7 for ansible host, k8s master and worker nodes)
 
 1. Install ansible into ansible host
