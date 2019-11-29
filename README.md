@@ -1,6 +1,7 @@
 # ansible-k8s
 Install a k8s cluster by ansible playbooks<br>
-(tested with Centos7 for ansible host, k8s master and worker nodes)
+- tested with Centos7 for ansible host, k8s master and worker nodes)
+- Assuming that user on ansible host and k8s nodes are centos, authenticate by SSH Key (no password)
 
 1. Install ansible into ansible host
 ```
