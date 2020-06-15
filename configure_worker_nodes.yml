@@ -4,7 +4,7 @@
   - env_variables
   tasks:
   - name: Copying token to worker nodes
-    copy: src=/home/centos/{{ token_file }} dest=/home/centos/join_token
+    copy: src=/home/bien/{{ token_file }} dest=/home/centos/join_token
 
   - name: Joining worker nodes with kubernetes master
     become: true

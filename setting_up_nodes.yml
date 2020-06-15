@@ -49,7 +49,35 @@
     become: true
     shell: "echo 'net.bridge.bridge-nf-call-iptables=1' >> /etc/sysctl.conf"
 
-  - name: Enabling Bridge Firewall Rule - Running sysctl -p
+  - name: Set local port range 1024 65535 in /etc/sysctl.conf
     become: true
-    shell: "sysctl -p"
+    shell: "echo 'net.ipv4.ip_local_port_range = 1024 65535' >> /etc/sysctl.conf"
+ 
+  - name: Set file-max 5000000 in /etc/sysctl.conf
+    become: true
+    shell: "echo 'fs.file-max = 5000000' >> /etc/sysctl.conf"
+ 
+  - name: Set somaxconn 500 in /etc/sysctl.conf
+    become: true
+    shell: "echo 'net.core.somaxconn = 500' >> /etc/sysctl.conf"
+ 
+  - name: Set * soft nproc 65535 in /etc/security/limits.conf
+    become: true
+    shell: "echo '* soft nproc 65535' >> /etc/security/limits.conf"
+
+  - name: Set * hard nproc 65535 in /etc/security/limits.conf
+    become: true
+    shell: "echo '* hard nproc 65535' >> /etc/security/limits.conf"
+
+  - name: Set * soft nofile 65535 in /etc/security/limits.conf
+    become: true
+    shell: "echo '* soft nofile 65535' >> /etc/security/limits.conf"
+
+  - name: Set * hard nofile 65535 in /etc/security/limits.conf
+    become: true
+    shell: "echo '* hard nofile 65535' >> /etc/security/limits.conf"
+    
+  - name: Reboot nodes
+    become: true
+    reboot:
 

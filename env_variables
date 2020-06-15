@@ -1,5 +1,5 @@
 # ad_addr is master server, which other nodes/clients to connect to
-ad_addr: 172.31.1.153
+ad_addr: 172.31.5.149
 cidr_v: 172.16.0.0/16
 
 packages:
@@ -11,3 +11,4 @@ services:
 - kubelet
 
 token_file: join_token
+

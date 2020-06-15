@@ -1,6 +1,7 @@
 [masters]
-18.163.100.11
+18.166.64.152 ansible_user=centos
 
 [nodes]
-18.163.114.21
-18.162.113.193
+18.162.52.87 ansible_user=centos
+18.162.130.242 ansible_user=centos
+
